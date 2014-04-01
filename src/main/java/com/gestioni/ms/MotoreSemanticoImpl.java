@@ -13,6 +13,7 @@ import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.query.ResultSetFormatter;
+import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 
@@ -93,9 +94,45 @@ public class MotoreSemanticoImpl implements MotoreSemantico {
 	}
 
 	@Override
-	public double calcolaSoglia(String terreno, String coltura) {
-		// TODO Auto-generated method stub
-		return 0;
+	public double calcolaSoglia(String tipoerreno, String coltura) {
+		Model aModel = null;
+		 try {
+			aModel = SDJenaFactory.createModel(conn);
+			
+		}  catch (StardogException e) {
+			throw new RuntimeException(e);
+		}
+		 
+		 String aQueryString = "PREFIX www:<http://www.deprin.owl#> " +
+	        		"SELECT ?coltivazione ?th WHERE {" +
+	                    "?coltivazione a www:coltivazione." +
+	                    "?coltivazione www:tipo %s." +
+	                    "?coltivazione www:ha_coltura %s." +
+	                    "?coltivazione www:th ?th" +
+	                "}";
+
+	        // Create a query...
+	        String tipoTerreno = "www:argilloso";
+	        String tipoColtivazione = "www:patata";
+	        Query aQuery = QueryFactory.create(String.format(aQueryString, tipoTerreno, tipoColtivazione));
+	        
+	        // ... and run it
+	        QueryExecution aExec = QueryExecutionFactory.create(aQuery, aModel);
+	        ResultSet result = aExec.execSelect();
+	        double th = 0;
+	        if(result.hasNext()){
+	        	QuerySolution next = result.next();
+	        	Literal l = next.getLiteral("th");
+	        	th = l.getDouble();
+	        }
+	        
+	       
+	       try {
+	    	   return th;
+		} finally {
+//			aModel.close();
+			aExec.close();
+		}
 	}
 
 }

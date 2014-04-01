@@ -39,6 +39,9 @@ public class Test {
         for(String s : list){
         	System.out.println(s);
         }
+        
+        double result = motoreSemantico.calcolaSoglia("www:argilloso", "www:patata");
+        System.out.println(result);
     }
 
 }
