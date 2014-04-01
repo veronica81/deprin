@@ -1,5 +1,7 @@
 package com.gestioni.test;
 
+import java.util.List;
+
 import com.complexible.stardog.StardogException;
 import com.complexible.stardog.api.Connection;
 import com.complexible.stardog.api.ConnectionConfiguration;
@@ -7,6 +9,8 @@ import com.complexible.stardog.api.IO;
 import com.complexible.stardog.api.reasoning.ReasoningConnection;
 import com.complexible.stardog.jena.SDJenaFactory;
 import com.complexible.stardog.reasoning.api.ReasoningType;
+import com.gestioni.ms.MotoreSemantico;
+import com.gestioni.ms.MotoreSemanticoImpl;
 import com.hp.hpl.jena.query.*;
 import com.hp.hpl.jena.rdf.model.Model;
 import org.openrdf.rio.RDFFormat;
@@ -25,19 +29,16 @@ public class Test {
                 .reasoning(ReasoningType.SL)
                 .connect()
                 .as(ReasoningConnection.class);
-
-        Model aModel = SDJenaFactory.createModel(reasoningConnection);
-        String aQueryString = "PREFIX www:<http://www.deprin.owl#> " +
-        		"SELECT * WHERE {?s www:ru ?o}";
-
-        // Create a query...
-        Query aQuery = QueryFactory.create(aQueryString);
-
-        // ... and run it
-        QueryExecution aExec = QueryExecutionFactory.create(aQuery, aModel);
-
-        // now print the results
-        ResultSetFormatter.out(aExec.execSelect(), aModel);
+        
+        MotoreSemantico motoreSemantico = new MotoreSemanticoImpl(reasoningConnection);
+        List<String> list = motoreSemantico.getColture();
+        for(String s : list){
+        	System.out.println(s);
+        }
+       list = motoreSemantico.getTipiTerreno();
+        for(String s : list){
+        	System.out.println(s);
+        }
     }
 
 }
