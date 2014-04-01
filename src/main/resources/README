@@ -1,0 +1,12 @@
+###############
+### STARDOG ###
+###############
+
+#start server
+./stardog-admin server start
+
+#creazione database
+./stardog-admin db create -n deprin /home/deprin/DEPRIN/ONTOLOGIE/v.1.0/agricoltura2.owl
+
+#drop database
+./stardog-admin db drop deprin
