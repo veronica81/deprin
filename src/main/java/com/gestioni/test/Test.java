@@ -21,7 +21,8 @@ public class Test {
                 .credentials("admin", "admin")
                 .connect();
         Model aModel = SDJenaFactory.createModel(aConn);
-        String aQueryString = "SELECT * WHERE {?s ?p ?o}";
+        String aQueryString = "PREFIX www:<http://www.deprin.owl#> " +
+        		"SELECT * WHERE {www:ru ?p ?o}";
 
         // Create a query...
         Query aQuery = QueryFactory.create(aQueryString);
