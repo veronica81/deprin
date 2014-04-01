@@ -1,0 +1,771 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY www "http://www.deprin.owl#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/deprin/ontologies/2014/2/untitled-ontology-88#"
+     xml:base="http://www.semanticweb.org/deprin/ontologies/2014/2/untitled-ontology-88"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:www="http://www.deprin.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.deprin.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.deprin.owl#ha_coltura -->
+
+    <owl:ObjectProperty rdf:about="&www;ha_coltura">
+        <rdfs:domain rdf:resource="&www;coltivazione"/>
+        <rdfs:range rdf:resource="&www;coltura"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.deprin.owl#monitorata_da -->
+
+    <owl:ObjectProperty rdf:about="&www;monitorata_da">
+        <rdfs:domain rdf:resource="&www;coltivazione"/>
+        <rdfs:range rdf:resource="&www;sensore"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.deprin.owl#tipo -->
+
+    <owl:ObjectProperty rdf:about="&www;tipo">
+        <rdfs:domain rdf:resource="&www;coltivazione"/>
+        <rdfs:range rdf:resource="&www;tipo_terreno"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.deprin.owl#cc -->
+
+    <owl:DatatypeProperty rdf:about="&www;cc">
+        <rdfs:domain rdf:resource="&www;tipo_terreno"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deprin.owl#lettura -->
+
+    <owl:DatatypeProperty rdf:about="&www;lettura">
+        <rdfs:domain rdf:resource="&www;sensore"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deprin.owl#p -->
+
+    <owl:DatatypeProperty rdf:about="&www;p">
+        <rdfs:domain rdf:resource="&www;coltura"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deprin.owl#pa -->
+
+    <owl:DatatypeProperty rdf:about="&www;pa">
+        <rdfs:domain rdf:resource="&www;tipo_terreno"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deprin.owl#rfu -->
+
+    <owl:DatatypeProperty rdf:about="&www;rfu">
+        <rdfs:domain rdf:resource="&www;coltura"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deprin.owl#ru -->
+
+    <owl:DatatypeProperty rdf:about="&www;ru">
+        <rdfs:domain rdf:resource="&www;tipo_terreno"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deprin.owl#s -->
+
+    <owl:DatatypeProperty rdf:about="&www;s">
+        <rdfs:domain rdf:resource="&www;coltivazione"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deprin.owl#th -->
+
+    <owl:DatatypeProperty rdf:about="&www;th">
+        <rdfs:domain rdf:resource="&www;coltivazione"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.deprin.owl#volume -->
+
+    <owl:DatatypeProperty rdf:about="&www;volume">
+        <rdfs:domain rdf:resource="&www;coltivazione"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.deprin.owl#coltivazione -->
+
+    <owl:Class rdf:about="&www;coltivazione"/>
+    
+
+
+    <!-- http://www.deprin.owl#coltura -->
+
+    <owl:Class rdf:about="&www;coltura"/>
+    
+
+
+    <!-- http://www.deprin.owl#coltura_da_radice -->
+
+    <owl:Class rdf:about="&www;coltura_da_radice">
+        <rdfs:subClassOf rdf:resource="&www;coltura_orticola"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deprin.owl#coltura_da_tubero -->
+
+    <owl:Class rdf:about="&www;coltura_da_tubero">
+        <rdfs:subClassOf rdf:resource="&www;coltura_orticola"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deprin.owl#coltura_orticola -->
+
+    <owl:Class rdf:about="&www;coltura_orticola">
+        <rdfs:subClassOf rdf:resource="&www;coltura"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.deprin.owl#sensore -->
+
+    <owl:Class rdf:about="&www;sensore"/>
+    
+
+
+    <!-- http://www.deprin.owl#tipo_terreno -->
+
+    <owl:Class rdf:about="&www;tipo_terreno"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.deprin.owl#argilloso -->
+
+    <owl:NamedIndividual rdf:about="&www;argilloso">
+        <rdf:type rdf:resource="&www;tipo_terreno"/>
+        <www:pa rdf:datatype="&xsd;double">17.4</www:pa>
+        <www:cc rdf:datatype="&xsd;double">30.3</www:cc>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deprin.owl#carota -->
+
+    <owl:NamedIndividual rdf:about="&www;carota">
+        <rdf:type rdf:resource="&www;coltura_da_radice"/>
+        <www:p rdf:datatype="&xsd;double">0.1</www:p>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deprin.owl#coltivazione_01 -->
+
+    <owl:NamedIndividual rdf:about="&www;coltivazione_01">
+        <rdf:type rdf:resource="&www;coltivazione"/>
+        <www:s rdf:datatype="&xsd;double">10000.0</www:s>
+        <www:tipo rdf:resource="&www;argilloso"/>
+        <www:monitorata_da rdf:resource="&www;igrometro"/>
+        <www:ha_coltura rdf:resource="&www;patata"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deprin.owl#igrometro -->
+
+    <owl:NamedIndividual rdf:about="&www;igrometro">
+        <rdf:type rdf:resource="&www;sensore"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deprin.owl#patata -->
+
+    <owl:NamedIndividual rdf:about="&www;patata">
+        <rdf:type rdf:resource="&www;coltura_da_tubero"/>
+        <www:p rdf:datatype="&xsd;double">0.5</www:p>
+        <www:rfu rdf:datatype="&xsd;double">0.6</www:rfu>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.deprin.owl#sabbioso -->
+
+    <owl:NamedIndividual rdf:about="&www;sabbioso">
+        <rdf:type rdf:resource="&www;tipo_terreno"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#t">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#val_cc">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#val_pa">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#sub">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#colt">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#c">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#val_rfu">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#val_ru">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#mul">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#th">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#sens">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#u">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#p">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#s">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#v">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&www;coltura"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#c"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="&www;tipo_terreno"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="&www;ha_coltura"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl#c"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#colt"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="&www;ru"/>
+                                                                                <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                                                                                <swrl:argument2 rdf:resource="urn:swrl#val_ru"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                                                        <swrl:builtin rdf:resource="&swrlb;multiply"/>
+                                                                                        <swrl:arguments rdf:parseType="Collection">
+                                                                                            <rdf:Description rdf:about="urn:swrl#mul"/>
+                                                                                            <rdf:Description rdf:about="urn:swrl#val_ru"/>
+                                                                                            <rdf:Description rdf:about="urn:swrl#val_rfu"/>
+                                                                                        </swrl:arguments>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                                                                <swrl:builtin rdf:resource="&swrlb;subtract"/>
+                                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                                    <rdf:Description rdf:about="urn:swrl#th"/>
+                                                                                                    <rdf:Description rdf:about="urn:swrl#val_cc"/>
+                                                                                                    <rdf:Description rdf:about="urn:swrl#mul"/>
+                                                                                                </swrl:arguments>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="&www;rfu"/>
+                                                                        <swrl:argument1 rdf:resource="urn:swrl#c"/>
+                                                                        <swrl:argument2 rdf:resource="urn:swrl#val_rfu"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="&www;cc"/>
+                                                                <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                                                                <swrl:argument2 rdf:resource="urn:swrl#val_cc"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="&www;tipo"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl#colt"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&www;coltivazione"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#colt"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&www;th"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#colt"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#th"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="&www;pa"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#val_pa"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="&swrlb;subtract"/>
+                                                <swrl:arguments rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="urn:swrl#sub"/>
+                                                    <rdf:Description rdf:about="urn:swrl#val_cc"/>
+                                                    <rdf:Description rdf:about="urn:swrl#val_pa"/>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="&www;cc"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#val_cc"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&www;tipo_terreno"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&www;ru"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#sub"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&www;volume"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#colt"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#v"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&www;coltivazione"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#colt"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&www;coltura"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#c"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="&www;sensore"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#sens"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="&www;tipo_terreno"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="&www;ha_coltura"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl#c"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl#colt"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="&www;cc"/>
+                                                                                <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                                                                                <swrl:argument2 rdf:resource="urn:swrl#val_cc"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                                                        <swrl:propertyPredicate rdf:resource="&www;lettura"/>
+                                                                                        <swrl:argument1 rdf:resource="urn:swrl#sens"/>
+                                                                                        <swrl:argument2 rdf:resource="urn:swrl#u"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                                                <rdf:first>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                                                                        <swrl:propertyPredicate rdf:resource="&www;s"/>
+                                                                                                        <swrl:argument1 rdf:resource="urn:swrl#colt"/>
+                                                                                                        <swrl:argument2 rdf:resource="urn:swrl#s"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:first>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                                                        <rdf:first>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                                                                                <swrl:builtin rdf:resource="&swrlb;multiply"/>
+                                                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                                                    <rdf:Description rdf:about="urn:swrl#mul"/>
+                                                                                                                    <rdf:Description rdf:about="urn:swrl#s"/>
+                                                                                                                    <rdf:Description rdf:about="urn:swrl#p"/>
+                                                                                                                </swrl:arguments>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:first>
+                                                                                                        <rdf:rest>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                                                                <rdf:rest>
+                                                                                                                    <rdf:Description>
+                                                                                                                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                                                                                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                                                                                        <rdf:first>
+                                                                                                                            <rdf:Description>
+                                                                                                                                <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                                                                                                <swrl:builtin rdf:resource="&swrlb;subtract"/>
+                                                                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                                                                    <rdf:Description rdf:about="urn:swrl#sub"/>
+                                                                                                                                    <rdf:Description rdf:about="urn:swrl#val_cc"/>
+                                                                                                                                    <rdf:Description rdf:about="urn:swrl#u"/>
+                                                                                                                                </swrl:arguments>
+                                                                                                                            </rdf:Description>
+                                                                                                                        </rdf:first>
+                                                                                                                    </rdf:Description>
+                                                                                                                </rdf:rest>
+                                                                                                                <rdf:first>
+                                                                                                                    <rdf:Description>
+                                                                                                                        <rdf:type rdf:resource="&swrl;BuiltinAtom"/>
+                                                                                                                        <swrl:builtin rdf:resource="&swrlb;multiply"/>
+                                                                                                                        <swrl:arguments rdf:parseType="Collection">
+                                                                                                                            <rdf:Description rdf:about="urn:swrl#v"/>
+                                                                                                                            <rdf:Description rdf:about="urn:swrl#sub"/>
+                                                                                                                            <rdf:Description rdf:about="urn:swrl#mul"/>
+                                                                                                                        </swrl:arguments>
+                                                                                                                    </rdf:Description>
+                                                                                                                </rdf:first>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:rest>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="&swrl;DatavaluedPropertyAtom"/>
+                                                                                                <swrl:propertyPredicate rdf:resource="&www;p"/>
+                                                                                                <swrl:argument1 rdf:resource="urn:swrl#c"/>
+                                                                                                <swrl:argument2 rdf:resource="urn:swrl#p"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="&www;tipo"/>
+                                                                        <swrl:argument1 rdf:resource="urn:swrl#colt"/>
+                                                                        <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="&www;monitorata_da"/>
+                                                                <swrl:argument1 rdf:resource="urn:swrl#colt"/>
+                                                                <swrl:argument2 rdf:resource="urn:swrl#sens"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
