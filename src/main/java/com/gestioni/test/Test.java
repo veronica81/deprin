@@ -41,7 +41,10 @@ public class Test {
         }
         
         double result = motoreSemantico.calcolaSoglia("www:argilloso", "www:patata");
-        System.out.println(result);
+        System.out.println("soglia: " +result);
+        
+        double volume = motoreSemantico.calcolaVolumeH2O("www:argilloso", "www:patata", 30);
+        System.out.println("volume: "+ volume);
     }
 
 }
